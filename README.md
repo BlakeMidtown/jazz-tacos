@@ -14,9 +14,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/menu](http://localhost:3000/api/menu). This endpoint can be edited in `pages/api/menu.js`.
 
 ## Learn More
 
@@ -27,8 +25,33 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Assessment Instructions
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Build a react site for the fake resturant Jazz Taco’s.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- You should fetch the data from the API to get the menu items. - `/api/menu`
+- Display a Menu Item Card for each item on the menu in a list.
+  - Clicking the plus or minus buttons on any given menu item should inrease or decrease the quantity of items on an order keep track of the amounts of items in an order and show an updated total and order summary.
+- You must submit the data for an order to the API. - `/api/order`
+  - If the APi returns with a successful response than navigate to the success page.
+  - If the API returns with an error then use the javascript alert to show the error.
+
+### Notes:
+
+- The flow on Mobile is slightly different becuase of the reduced screen realestate and so it has an additional step of showign the order summary
+- Things I am looking for in this assessment:Good usage of react components to reduce repettion in code good usage of react hooks
+- Your app should be a full responsive website, meaning it should look good on any screen size Please build your site to look like the attached mockups.
+
+### Mockups
+
+#### Mobile
+
+| Menu                                   | Order Summary                           | Success                                 |
+| -------------------------------------- | --------------------------------------- | --------------------------------------- |
+| ![Mobile Menu](/mockups/Frame%201.jpg) | ![Mobile Menu](/mockups/Frame%2010.jpg) | ![Mobile Menu](/mockups/Frame%2013.jpg) |
+
+#### Desktop
+
+| Menu                                    | Success                                 |
+| --------------------------------------- | --------------------------------------- |
+| ![Mobile Menu](/mockups/Frame%2012.jpg) | ![Mobile Menu](/mockups/Frame%2014.jpg) |
