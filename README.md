@@ -39,8 +39,11 @@ Build a react site for the fake resturant Jazz Taco’s.
 ### Notes:
 
 - The flow on Mobile is slightly different becuase of the reduced screen realestate and so it has an additional step of showign the order summary
-- Things I am looking for in this assessment:Good usage of react components to reduce repettion in code good usage of react hooks
-- Your app should be a full responsive website, meaning it should look good on any screen size Please build your site to look like the attached mockups.
+- Things I am looking for in this assessment:
+  - Good usage of react components to reduce repettion in code good usage of react hooks
+  - Clean, commented code
+- Your app should be a full responsive website, meaning it should look good on any screen size
+- Please build your site to look like the attached mockups.
 
 ### Mockups
 
