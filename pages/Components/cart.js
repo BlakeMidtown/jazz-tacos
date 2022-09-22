@@ -38,7 +38,7 @@ import { useRouter } from 'next/router'
           </div>
         </div>
         <div className={show? "subcenter": "paddingright"}>
-          <button onClick={handleRequest} className="buttonpink">{show? "Submit Order" : "Checkout"}</button>
+          <button onClick={handleRequest} className="buttonpinksub">{show? "Submit Order" : "Checkout"}</button>
         </div>
       </div>    
     </div>
