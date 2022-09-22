@@ -7,8 +7,8 @@ import { faMinusCircle } from '@fortawesome/free-solid-svg-icons'
 
 function Taco({taco, handleClick, handleRemove, cart, tacodata}) {
   const [count, setCount] = useState(0);
-  const elementa = <FontAwesomeIcon icon={faPlusCircle} size="20x"/>
-  const elementb = <FontAwesomeIcon icon={faMinusCircle} size="20x"/>
+  const elementa = <FontAwesomeIcon icon={faPlusCircle}/>
+  const elementb = <FontAwesomeIcon icon={faMinusCircle}/>
    
 
   return (
@@ -20,22 +20,20 @@ function Taco({taco, handleClick, handleRemove, cart, tacodata}) {
             </div>
             <div className="col-2a">
               <div className="left">
-              <h1 className="h4">{taco.title} </h1>
-              <h2 className="elpis">{taco.description}</h2>
-              <p className="text">{cart.qty}</p>             
-            </div>
+                <h1 className="h4">{taco.title} </h1>
+                <h2 className="elpis">{taco.description}</h2>
+                <p className="text">{cart.qty}</p>             
+              </div>
             </div>                        
           </div>
           <div className="center">
                 <div className="grid">
-                <button className="button" onClick={() => handleClick(taco, 1)}>{elementa}</button>
-                <h1>{(cart.find((x) => (x.id === taco.id)))? (cart.find((x) => (x.id === taco.id))).qty : 0}</h1>
-                <button className="buttonr" onClick={() => handleRemove(taco, -1)}>{elementb}</button>
+                  <button className="button" onClick={() => handleClick(taco, 1)}>{elementa}</button>
+                  <h1>{(cart.find((x) => (x.id === taco.id)))? (cart.find((x) => (x.id === taco.id))).qty : 0}</h1>
+                  <button className="buttonr" onClick={() => handleRemove(taco, -1)}>{elementb}</button>
                 </div>
-              </div>
-       </div>
-     
-  
+          </div>
+       </div>  
   );
 }
 

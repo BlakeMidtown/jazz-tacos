@@ -12,10 +12,15 @@ export default function App() {
   const [tacodata, setTacoData] = useState([])  
   const [cart, setCart] = useState([]);  
   const [price, setPrice] = useState(0);
-  
- 
+  const [show,setShow] = useState(false)
+//Use Effects  
+  //sets cart when price updates
   useEffect(() => {setCart(cart)},[price])
 
+  useEffect(() => {
+    handlePrice();
+    });   
+  //gets data on page load
   useEffect(() => {
     fetch(`http://localhost:3000/tacos`)
     .then(r => r.json())
@@ -23,7 +28,7 @@ export default function App() {
     const renderLinks = tacodata.map((taco) => (
       <Taco cart={cart} tacodata={tacodata} key={taco.id} taco={taco} handleClick={handleClick} handleRemove={handleRemove}/>
       ))
- 
+//Functions 
   function handleClick(product)  {
     const exist = cart.find((x) => x.id === product.id);
     if (exist) {
@@ -49,24 +54,12 @@ export default function App() {
         )
       );
     }
-  };
+  }; 
 
-  function handlePrice () {
-    let ans = 0;
-    cart.map((item) => (ans += item.amount * item.price));
-    setPrice(ans);
-  };
-
-  const handleChange = (item, d) => {
-    const ind = cart.indexOf(item);
-    const arr = cart;
-    arr[ind].amount += d;
-
-    if (arr[ind].amount === 0) arr[ind].amount = 1;
-    setCart([...arr]);
-  };
-
-  const router= useRouter()
+  function handleToCheckout() {
+    setShow(true)
+    console.log(show)
+  } 
 
   function handleRequest(e) {
     e.preventDefault();    
@@ -88,7 +81,24 @@ export default function App() {
           );
       }
     })   
-  } 
+  }
+
+  const handlePrice = () => {
+    let ans = 0;
+    cart.map((item) => (ans +=  item.qty*item.price));
+    setPrice(ans);
+  };
+
+  const router= useRouter()
+
+  const handleChange = (item, d) => {
+    const ind = cart.indexOf(item);
+    const arr = cart;
+    arr[ind].amount += d;
+
+    if (arr[ind].amount === 0) arr[ind].amount = 1;
+    setCart([...arr]);
+  };
   
   return (
     <div>
@@ -96,17 +106,21 @@ export default function App() {
        <ul>
         <div className="row">
           <div className="col-2">
-            <div className="row">       
-            {renderLinks}
+            <div className={show ? "notshowing" : "row"}>                     
+              {renderLinks}
+            </div>
+            <div className="centerb">
+              <h1 className={show ? "" : "buttonpinksub"} >Total: ${price}</h1>
+              <button onClick={handleToCheckout} className={show ? "notshowing" : "buttonpinksub"}>Checkout</button>
             </div> 
           </div >
-          <div className="col-1">  
-            <Cart  handleRequest={handleRequest} cart={cart} setCart={setCart} handleChange={handleChange}/>
+          <div className={show ? "nowshowing" : "col-1"}>  
+            <Cart show={show} price={price} handlePrice={handlePrice}  handleRequest={handleRequest} cart={cart} setCart={setCart} handleChange={handleChange}/>
           </div>  
         </div >      
-      <div className="grid"> 
-      </div>
+        <div className="grid"></div>
       </ul>
     </div>   
     );
   }
+  // {show ? "nowshowing" : "col-1"}
