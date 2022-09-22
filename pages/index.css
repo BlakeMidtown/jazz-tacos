@@ -118,7 +118,19 @@ h1{
   padding-right: 250px;
 
 }
+.lastbutton{
+  background-color: #a031d8;
+  border-radius: 15px; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  float: right;
 
+}
 .centered {
   position: fixed;
   top: 50%;
@@ -175,6 +187,35 @@ h4{
   margin-right: 130px;
   /* display: none; */
 }
+.buttonblacksub {
+  /* background-color: black;
+  border-radius: 15px; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  float: right;
+  margin-right: 130px; */
+  /* display: none; */
+}
+@media (min-width: 800px) {
+  .buttonblacksub {
+    background-color: black;
+    border-radius: 15px; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    float: right;
+    display: none;
+  }
+  }
 @media (min-width: 800px) {
 .buttonpinksub {
   background-color: #a031d8;

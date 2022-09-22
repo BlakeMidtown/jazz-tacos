@@ -110,7 +110,7 @@ export default function App() {
               {renderLinks}
             </div>
             <div className="centerb">
-              <h1 className={show ? "" : ""} >Total: ${price}</h1>
+              <h1 className={show ? "" : "buttonblacksub"} >Total: ${price}</h1>
               <button onClick={handleToCheckout} className={show ? "notshowing" : "buttonpinksub"}>Checkout</button>
             </div> 
           </div >
