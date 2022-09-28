@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import styles from '/styles/Home.module.css'
 import { useRouter } from 'next/router'
+
 
   function Cart({ show, cart, setCart, handleChange ,handleRequest, handlePrice, price }) {
   // const [price, setPrice] = useState(0);
   console.log(cart)
   const router= useRouter()
+  
 
 
  
